@@ -38,6 +38,16 @@ SUPABASE_URL=your_supabase_url_here
 SUPABASE_ANON_KEY=your_supabase_anon_key_here
 ```
 
+### 2. Update `AndroidManifest.xml`
+
+Open your `android/app/src/main/AndroidManifest.xml` file and make sure your Google Maps metadata uses the safe gradle placeholder (`${googleMapsApiKey}`) instead of hardcoding your private key:
+
+```xml
+        <meta-data  
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${googleMapsApiKey}"/>
+```
+
 ### 2. How to Obtain Required Keys
 
 - **Google Gemini API Key:**
